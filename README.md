@@ -156,7 +156,7 @@ Download the **Brazilian E-Commerce Public Dataset by Olist**:
 
 [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
 
-Place all CSV files in the local raw data directory as described in [`data/README.md`](data/README.md).
+Place all CSV files in the local raw data directory as described in [raw_data/README.md`](raw_data/README.md).
 
 Raw source data are not included in this repository.
 
