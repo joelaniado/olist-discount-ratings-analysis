@@ -40,3 +40,20 @@ flowchart TD
     I --> L["Historical Evidence"]
     J --> L
 ```
+
+### Data Preparation and Feature Engineering
+The full ETL pipeline for the raw dataset was implemented using SQL with DuckDB in Python. The full process can be found here:
+
+➡️ **[Launch ETL Pipeline Notebook](./ETL.ipynb)**
+
+A summary of the entire process can be seen below: 
+| Step  | # of Rows | Description  |
+|-------|-------|--------|
+| Raw Data   | 99,441  | Start with the complete Olist orders table.    |
+| Analysis Window & Customer Selection   | 70,054  | Keep delivered orders from Aug. 1, 2017 - Jul. 31, 2018 and retain the first eligible order per customer.   |
+| Orders with Ratings   | 69,589  | Require a customer review score.     |
+| Single-Item Orders   | 62,658   | Restrict the analysis to orders containing a single item.     |
+| Seller-Product Enrichment   | 62,658   | Add product, seller, and price information needed to construct seller-product pricing history.|
+| Final Analytical Dataset   | **31,004**   | Construct historical reference prices and discount depth using strictly prior seller-product price observations, requiring at least three prior observations.     |
+
+Because the original dataset does not contain a discount variable, discount was engineered by comparing each order's price with the maximum strictly prior observed price for the same seller-product pair. Orders with a discount depth of at least 1% were classified as discounted.
