@@ -9,4 +9,3 @@ seaborn==0.13.2
 statsmodels==0.14.6
 jupyterlab
 ipykernel
-pathlib
