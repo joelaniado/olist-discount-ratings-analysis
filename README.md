@@ -113,7 +113,7 @@ olist-discount-ratings-analysis/
 ├── requirements.txt
 ├── .gitignore
 ├── figures/
-└── data/
+└── raw_data/
     └── README.md
 ```
 - **ETL.ipynb**: Builds the analytical dataset from the raw Olist relational tables, including historical reference-price and discount-depth features.
